@@ -1,0 +1,69 @@
+Name: Jesse Warren
+Date: 10/20/23
+
+ANSWERS
+PART A:
+
+1. Before activating the debugging process, the executable yielded a total of 39624 bytes, which increased to 39632 when I allowed Debugging. For the iterative version, it began at 39816, and increased to 39824. 
+
+2. When adding the process of debugging, it seems to increase in size due to the addition of information relating to GDB itself. Such as the information of symbols, source code, etc. 
+
+3. I noticed that, when compared to doing it on the command line, doing it within emacs itself seems to be specialized for GDB, including its own screen for the output.
+
+4. Step is used to step into a certain line or function, however next is used to execute the current line of code and stop at the next line in the same function.
+
+5. You can run the command: break foo.cpp:25.
+
+6. You can run this command for place it on a specific function: break bar.cpp:foo.
+
+7. You can use the following command: break baz.cpp:bar::foo.
+
+8. GDB will initially load up the executable within a multi-file program.
+
+9. You can run the following command: clear <line_number>, which will clear the break-point at that given line.
+
+PART B:
+
+TERMS
+
+Breakpoint - The breakpoint buffer is used to display the information of the breakpoint you had just set. It'll display the locations, conditions, etc.
+
+GUD interaction Buffer - The 'GUD' is the buffer you use to interact with GDB and give it commands. Contains prompts, helps to run the code and cycle through it, etc.
+
+Primary Source Buffer - The code file itself and what you're debugging. Displays the code you're working on; practically the main thing you're working on.
+
+Stack Buffer - Shows the stack, and displays context on functions and their hierarchy. The content displayed shows memory addressed, file locations, etc.
+
+Locals/Registers Buffer - Shows the call stack. Displays information about variables and things within that nature.
+
+I/O Buffer - The I/O buffer allows the user to see output and input streams. It contains the data for both, which is extremely useful when debugging.
+
+Breakpoints/Threads Buffer - Provides an overview of threads and breakpoints. Much like the breakpoint buffer, it will provide additional context on them, but also that of active threads.
+
+COMMANDS
+
+b - Break. Allows the user to set a break-point at a certain line or function, via 'b <line_number>'
+
+l - List. Used to display additional information around the set execution point.
+
+c - Continue. Used to resume a program after a break-point is encountered.
+
+k - Kill. Used to terminate the debugging process. Exits GDB.
+
+bt - Back-trace. Shows the sequence of function calls that led to the point of execution.
+
+q - quit. Used to exit GDB. (make sure its quit and not 'Quit'. Iffy about caps I s'pose)
+
+s 5 - Step. 'Steps' through the program, executing code line by line.
+
+whatis - Displays the type of variable.
+
+info - Used to gain, well, info about a specified part of the program.
+
+info registers - Displays values of CPU registers. Provides insight on the Central Processing Unit and lets the poor thing vent about how much its abused.
+
+p variable_name - Print. Allows the user to 'print' the current value of a variable.
+
+i breakpoints - Full name info breakpoints. Used to display information about all breakpoints. Their numbers, etc.
+
+set var x = 20. - Set variable is used to change the value of a variable. Give the name, and the number you want to change, and presto.
